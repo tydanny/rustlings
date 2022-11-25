@@ -18,7 +18,6 @@
 // - The output element is going to be a Vector of strings.
 // Execute `rustlings hint quiz2` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
 
 pub enum Command {
     Uppercase,
@@ -42,12 +41,13 @@ mod my_module {
                     output.push(string.trim().to_string());
                 }
                 Command::Append(size) => {
-                    let mut str = String::new();
                     let mut i: usize = 0;
+                    let mut newStr = string.to_string();
                     while i < *size {
-                        str += "bar";
+                        newStr.push_str("bar");
                         i += 1;
                     }
+                    output.push(newStr)
                 }
             }
         }
